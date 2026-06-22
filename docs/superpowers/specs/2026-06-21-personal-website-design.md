@@ -30,6 +30,7 @@ Success criteria:
 - Writing: post index with tag filtering; individual post pages; per-tag pages.
 - About page: professional narrative adapted from Jeremy's existing résumé content.
 - Outbound links to LinkedIn (labeled "LinkedIn") and GitHub in header/footer.
+- Full-text post search (client-side, via Pagefind).
 - RSS feed, XML sitemap, SEO/social-preview meta, light/dark theme toggle.
 - One-time Substack → Markdown migration script (with image localization).
 - GitHub Pages deployment with custom domain.
@@ -38,7 +39,7 @@ Success criteria:
 
 - On-site résumé/CV page (the nav links out to LinkedIn instead).
 - A projects/portfolio section (just a GitHub link).
-- Newsletter/email signup, comments, analytics, on-site search.
+- Newsletter/email signup, comments, analytics.
 
 ## 3. Decision Log
 
@@ -51,7 +52,8 @@ Success criteria:
 | Résumé | Link out to LinkedIn (nav label "LinkedIn") | No duplicate CV to maintain |
 | Résumé content | Adapt into the About page narrative | Reuse existing well-written copy |
 | Projects | None on-site; GitHub link only | Keep it simple |
-| Optional features | Tags/filtering only (no newsletter/comments/analytics) | Minimal surface area |
+| Optional features | Tags/filtering + full-text search (no newsletter/comments/analytics) | Minimal surface area |
+| Search | Pagefind via `astro-pagefind` (client-side, build-time index) | Best static-site full-text search; scales; no backend |
 | Migration source | Substack export zip (already provided) | Complete + reliable |
 
 ## 4. Architecture & Tech Stack
@@ -60,7 +62,8 @@ Success criteria:
 - **TypeScript**, with `astro check` for type checking.
 - Content via Astro's **Content Layer API** (mandatory in Astro 6).
 - Built-in **Shiki** for code syntax highlighting (dual light/dark themes).
-- Integrations: `@astrojs/rss` (4.x), `@astrojs/sitemap` (3.x).
+- Integrations: `@astrojs/rss` (4.x), `@astrojs/sitemap` (3.x), `astro-pagefind`
+  (2.x — Pagefind full-text search).
 - Styling: hand-written CSS with **CSS custom properties** for theming (no CSS
   framework — keeps it simple and fast). Theme switched via a `data-theme`
   attribute on `<html>`.
@@ -84,11 +87,12 @@ Success criteria:
 │   │   ├── SiteFooter.astro           # LinkedIn + GitHub links
 │   │   ├── PostCard.astro             # post summary card (title, date, tags, desc)
 │   │   ├── TagList.astro              # renders tag chips linking to /tags/[tag]
-│   │   └── ThemeToggle.astro          # the toggle button
+│   │   ├── ThemeToggle.astro          # the toggle button
+│   │   └── Search.astro               # Pagefind UI (PagefindConfig + <pagefind-searchbox>)
 │   ├── pages/
 │   │   ├── index.astro                # home: intro + recent posts
 │   │   ├── about.astro                # About narrative
-│   │   ├── writing/index.astro        # all posts + tag filter
+│   │   ├── writing/index.astro        # all posts + tag filter + search box
 │   │   ├── writing/[id].astro         # individual post
 │   │   ├── tags/[tag].astro           # posts for a tag
 │   │   ├── 404.astro
@@ -191,6 +195,19 @@ Ruby, Go, Personal**. Suggested mapping:
 - **Images in posts:** localized into `src/assets/blog/<slug>/` and referenced
   with relative paths in the Markdown body so Astro optimizes them (images in
   `public/` are not optimized — so they go in `src/`).
+- **Search (full-text):** [Pagefind](https://pagefind.app) via the
+  `astro-pagefind` integration. Add `pagefind()` to the `integrations` array in
+  `astro.config.mjs`; the integration registers an `astro:build:done` hook that
+  indexes the built HTML during `astro build` and writes `dist/pagefind/` — **no
+  extra build step or CI change needed**. The UI is the Pagefind 1.5 component-UI,
+  wrapped in a `Search.astro` component (`<PagefindConfig />` +
+  `<pagefind-searchbox>`), placed at the top of `/writing` (optionally also in the
+  header). Add `data-pagefind-body` to the post `<article>` in `PostLayout` and
+  `data-pagefind-ignore` to nav/footer so results index post content, not chrome.
+  Theme the UI via the `--pf-*` CSS variables, overridden under our
+  `[data-theme='dark']` selector so search follows the site's light/dark toggle.
+  Note: `astro dev` serves the index from the last build, so run `astro build`
+  once for search to work locally (CI always builds, so production is unaffected).
 
 ## 8. Substack Migration
 
@@ -266,7 +283,9 @@ the adapted copy.
   enabled; the custom domain serves from root either way.
 - **CI:** `.github/workflows/deploy.yml`, two jobs:
   - build: `actions/checkout@v6` → `withastro/action@v6` (auto-detects package
-    manager from the committed lockfile; defaults to Node 24).
+    manager from the committed lockfile; defaults to Node 24). The Pagefind
+    search index is produced inside `astro build` via the `astro-pagefind`
+    integration, so no extra workflow step is required.
   - deploy: `needs: build`, `environment: github-pages`, `actions/deploy-pages@v5`.
   - Top-level `permissions: { contents: read, pages: write, id-token: write }`
     and `concurrency: { group: pages, cancel-in-progress: false }`.
@@ -299,6 +318,8 @@ a `www` CNAME pointing elsewhere) or the TLS cert may fail to provision.
 - Content-collection zod schema acts as a content gate: a malformed post fails
   the build rather than shipping broken.
 - `astro build` must succeed in CI before deploy.
+- After `astro build`, the Pagefind search index (`dist/pagefind/`) is generated
+  — a build smoke check confirms it exists.
 - **Migration converter unit test:** feed a representative Substack HTML fragment
   (with a captioned image + chrome buttons + a code block + smart quotes) through
   the pipeline and assert: chrome removed, one clean `![alt](path)` image, fenced
@@ -329,10 +350,14 @@ Confirmed via official docs during a research-and-verify pass on 2026-06-21
   https://docs.astro.build/en/guides/integrations-guide/sitemap/ ,
   https://docs.astro.build/en/guides/syntax-highlighting/ ,
   https://docs.astro.build/en/guides/images/
+- Search (Pagefind / astro-pagefind): https://pagefind.app/docs/ ,
+  https://github.com/shishkin/astro-pagefind
 - Substack→Markdown libraries: rehype-remark, remark-stringify, gray-matter
   (unified ecosystem; ESM-only).
 
 Notable version facts: latest Astro is **6.4.x** (Node 22+ required, Content
 Layer API mandatory); `withastro/action@v6`; `actions/deploy-pages@v5` (the
 action README still shows `@v4` — use `v5`); GitHub Pages apex IPs unchanged
-(`185.199.108–111.153`).
+(`185.199.108–111.153`); full-text search via `astro-pagefind@2.0.0` (Pagefind
+1.5), which indexes automatically during `astro build` so the deploy workflow is
+unchanged (verified by inspecting the package's `astro:build:done` hook).
