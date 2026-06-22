@@ -18,6 +18,7 @@
 - **Privacy:** `substack_export/` is git-ignored (contains the real subscriber email list); never commit it. Only converted Markdown + downloaded images are committed.
 - **Theme:** "Warm Personal" — warm-orange accent, light default + dark toggle driven by `data-theme` on `<html>`. All colors are CSS custom properties.
 - **Migration scripts are ESM-only** (the unified ecosystem is ESM); use `.mjs`.
+- **Test runner: Vitest 4.x** — must match Astro 6's Vite 7; Vitest 2/3 crash `getViteConfig`. Tests run via `vitest run` and use the Astro Container API for `.astro` components.
 
 ---
 
@@ -102,7 +103,7 @@ src/components/*.test.ts               # container-API component tests
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
     "typescript": "^5.6.0",
-    "vitest": "^2.1.0",
+    "vitest": "^4.1.0",
     "unified": "^11.0.0",
     "rehype-parse": "^9.0.0",
     "rehype-remark": "^10.0.0",
