@@ -164,6 +164,7 @@ export default defineConfig({
 - [ ] **Step 6: Create `vitest.config.ts`** (uses Astro's Vite config so `.astro` files import in tests)
 
 ```ts
+/// <reference types="vitest/config" />
 import { getViteConfig } from 'astro/config';
 
 export default getViteConfig({
@@ -172,6 +173,8 @@ export default getViteConfig({
   },
 });
 ```
+
+(The `/// <reference types="vitest/config" />` is required: `getViteConfig` types its argument as Vite's `UserConfig`, so without vitest's type augmentation `astro check` errors on the `test` key.)
 
 - [ ] **Step 7: Create `src/consts.ts`**
 
