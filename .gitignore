@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Astro build output
+dist/
+.astro/
+
+# Raw Substack export — contains the private subscriber email list; this is
+# migration *input*, not site content. Converted Markdown posts are committed instead.
+substack_export/
+
+# Brainstorming companion artifacts
+.superpowers/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.log
