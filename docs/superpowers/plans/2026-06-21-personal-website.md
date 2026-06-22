@@ -98,7 +98,8 @@ src/components/*.test.ts               # container-API component tests
     "astro": "^6.4.0",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.7.0",
-    "astro-pagefind": "^2.0.0"
+    "astro-pagefind": "^2.0.0",
+    "sharp": "^0.35.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
@@ -1235,7 +1236,12 @@ Expected: PASS (3 tests).
 ```js
 import { visit } from 'unist-util-visit';
 
-const CHROME = ['pencraft', 'lucide', 'restack-image', 'view-image', 'icon-container'];
+const CHROME = [
+  'pencraft', 'lucide', 'restack-image', 'view-image', 'icon-container',
+  // Substack subscription / share widgets (stripped so they don't render as junk links):
+  'button-wrapper', 'subscription-widget', 'subscription-widget-subscribe',
+  'subscription-widget-wrap-editor', 'preamble', 'cta-caption', 'email-input', 'fake-button',
+];
 
 function classList(node) {
   const c = node.properties && node.properties.className;
