@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { sortByDate } from '../utils/posts';
+
+const posts = sortByDate(await getCollection('blog', ({ data }) => !data.draft)).slice(0, 5);
+---
+<BaseLayout>
+  <section class="intro">
+    <h1>Hey, I'm Jeremy 👋</h1>
+    <p>I'm a software engineer. I write about code, systems, and the craft of
+      building things that last. This is where my essays live.</p>
+    <p><a href="/writing">Read the writing →</a></p>
+  </section>
+  <section>
+    <h2>Recent writing</h2>
+    {posts.map((post) => (
+      <PostCard id={post.id} title={post.data.title} description={post.data.description}
+                pubDate={post.data.pubDate} tags={post.data.tags} />
+    ))}
+  </section>
+</BaseLayout>

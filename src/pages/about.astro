@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SOCIAL } from '../consts';
+---
+<BaseLayout title="About" description="About Jeremy Winterberg — software engineer.">
+  <h1>About</h1>
+  <p>I'm an accomplished software engineer with over eight years of experience
+    building and optimizing robust distributed systems. I'm proficient in Ruby on
+    Rails, AWS, and Postgres, with a track record of leading complex projects, and
+    I spend my side-project time in Go, TypeScript, React, and Next.js.</p>
+
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>Senior Software Engineer — PrimeTrust</strong> (2021–2023). Built
+      and scaled a core financial API, cut p95 latency on ~500k daily requests from
+      20s to under 500ms, and led a Heroku→AWS migration on Kubernetes, Terraform,
+      and ArgoCD with 100% uptime.</li>
+    <li><strong>Senior Software Engineer — Smartcare Software</strong> (2019–2021).
+      Migrated systems to AWS (99.99% availability, ~$50k/yr saved) and architected
+      integrations for nationwide electronic visit verification.</li>
+    <li><strong>Software Engineer — Consulting</strong> (2017–2019). Delivered Rails
+      and Angular applications for clients including the University of Minnesota.</li>
+    <li><strong>Ruby on Rails Developer — UW–Eau Claire</strong> (2015–2017).</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <p><strong>Languages:</strong> Ruby, Go, TypeScript, SQL.
+    <strong>Frameworks:</strong> Ruby on Rails, React, Next.js, Angular.
+    <strong>Platforms &amp; tools:</strong> AWS, Docker, Kubernetes, Terraform,
+    GitHub Actions, DataDog, Postgres, Redis.</p>
+
+  <h2>Education</h2>
+  <p>BSc Computer Science, University of Wisconsin–Eau Claire (minor: Economics).</p>
+
+  <p>For the full work history, see my <a href={SOCIAL.linkedin} target="_blank" rel="noopener">LinkedIn</a>,
+    and my code on <a href={SOCIAL.github} target="_blank" rel="noopener">GitHub</a>.</p>
+</BaseLayout>
