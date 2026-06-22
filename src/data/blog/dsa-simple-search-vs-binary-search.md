@@ -105,7 +105,3 @@ If you were using simple search, you would scan every single word from A onwards
 ## Conclusion
 
 This was a rather simple algorithm to digest. I obviously already knew what binary search was, but it was nice to refresh memory on it. I will get into more complex algorithms as we go along. I also plan on covering common Design Patterns in software engineering.
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/dsa-simple-search-vs-binary-search?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

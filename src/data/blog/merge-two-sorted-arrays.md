@@ -13,10 +13,6 @@ Technically, as of writing this I don’t know for sure yet if I failed or not�
 
 So, I decided this evening to suck it up and fix my mistakes. Answer the dreaded question every interviewer asks: “How would you change this?”
 
-Jeremy Winterberg is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
-
-[Type your email…](<mailto:Type your email…>)Subscribe
-
 I know the engineer who interviewed me had read some of my blog, but I doubt he’ll see this. If you did happen to come back, hi haha 👋. I’m only doing this to learn from my mistakes and become a stronger engineer for the next interview. I hope I don’t get rejected, I think it’s a cool company and would like to work there, but I know this likely won’t change the outcome.
 
 ### The coding challenge
@@ -68,7 +64,3 @@ I need to brush up on some common syntax in ruby still. For example, I couldn’
 I’m doing a lot of context switching between programming languages while I work on side projects, and it really threw me off in this interview. I want to continue growing my knowledge of Go, Typescript and React/Nextjs but it might be best if I focus entirely on ruby until I get hired somewhere.
 
 I believe my best chance at getting hired is going to be with a ruby stack because almost all of my experience is in ruby. The market right now doesn’t support engineers who are looking to step outside their primary tech stack unfortunately. Companies can pick an engineer from thousands who are looking for work right now, so they can find someone who matches exactly what they’re looking for with ease.
-
-Jeremy Winterberg is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
-
-[Type your email…](<mailto:Type your email…>)Subscribe

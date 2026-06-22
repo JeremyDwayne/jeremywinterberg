@@ -120,7 +120,3 @@ Additionally you will need the following vs code settings to point to your execu
 "php-cs-fixer.config": "/sc/config/.php_cs",
 "beautify.config": "/sc/config/.jsbeautifyrc",
 ```
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/making-the-best-of-an-old-school-dev-environment?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

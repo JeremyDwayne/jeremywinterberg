@@ -124,7 +124,3 @@ func main() {
  fmt.Println(sum)
 }
 ```
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/advent-of-code-2023-day-2?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

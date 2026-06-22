@@ -48,7 +48,3 @@ I have been looking at some “tutorial” videos, from who I would consider exp
 Go forth and build cool shit on your own my friends. You’ll become a stronger engineer because of it.
 
 Jeremy
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/stop-following-tutorials?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

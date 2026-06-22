@@ -70,7 +70,3 @@ Well.. the goal now is to become the strongest software engineer I can become. G
 I do feel slightly trapped because of this promotion. I don’t believe I would be able to interview at another company of similar or larger size and be leveled at staff. So my goals are to free myself of imposter syndrome yet again and be able to go anywhere.
 
 I like the company I work at, but I know I won’t work here forever. Being able to work without feeling trapped is quite liberating, and I wish to return to that state soon. So, I plan on leveling up myself while documenting what I can here on my blog.
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/two-promotions-in-8-months?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

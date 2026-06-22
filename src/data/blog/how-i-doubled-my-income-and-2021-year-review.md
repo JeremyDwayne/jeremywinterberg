@@ -77,7 +77,3 @@ Last time I got hung up on the blog infrastructure so this time it’s just a si
 Expect lots of posts to come about the things I’m learning. I’m still trying to determine a posting schedule that works for me, but for now we’ll see you soon!
 
 Cheers, Jeremy
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/how-i-doubled-my-income-and-2021-year-review?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

@@ -38,7 +38,3 @@ Unfortunately, it’s very difficult to find work right now. I’ve had multiple
 What I’m doing to set myself apart is some good old-fashioned work ethic. I’m busting my ass building projects and networking. I’m spending 10-15 hours a day either interviewing, applying to jobs, growing my skills and knowledge, networking with industry peers and recruiters, etc.
 
 I refuse to be passive in this search. I will find a job and I will continue this hustle into the future to stay on top of these skills. I will never allow myself to feel stuck at a company again because I’m rusty at technical interviews.
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/consistency-is-difficult?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

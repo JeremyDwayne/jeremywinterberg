@@ -140,7 +140,3 @@ Sum: 55834
 This was a rather fun exercise. I learned about files, buffers, string conversion, and type-casting. I looked into Part 2 a little, and it’s not something I want to work on at this time. I may come back and update it later on. What is interesting about it, is that I would learn more about how go uses hashmaps.
 
 Off to a great start! I look forward to solving Day 2 next!
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/advent-of-code-2023-day-1?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

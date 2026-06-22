@@ -410,7 +410,3 @@ Hopefully along the way I can improve on how I am able to articulate how I solve
 Happy New Year, and I wish you all the best in 2023.
 
 Jeremy
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/threads_and_queues_in_ruby?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

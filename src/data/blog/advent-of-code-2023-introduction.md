@@ -42,7 +42,3 @@ The first 8-9 days of AoC will be spammed back to back until I’m caught up. On
 My goal isn’t necessarily to go for the most optimal solution. I will try to do so where possible. My only goal is to work through these problems daily and learn more about go. If I have to do an incredibly naive solution to figure it out, so be it.
 
 If you’re ready to jump into things, the next post will be for day 1 of the challenges! Advent of Code - Day 1
-
-[Subscribe now](https://www.jeremywinterberg.com/subscribe?)
-
-[Share](https://www.jeremywinterberg.com/p/advent-of-code-2023-introduction?utm_source=substack\&utm_medium=email\&utm_content=share\&action=share)

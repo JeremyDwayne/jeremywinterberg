@@ -1,6 +1,17 @@
 import { visit } from 'unist-util-visit';
 
-const CHROME = ['pencraft', 'lucide', 'restack-image', 'view-image', 'icon-container'];
+const CHROME = [
+  'pencraft', 'lucide', 'restack-image', 'view-image', 'icon-container',
+  // Subscription / share widgets
+  'button-wrapper',
+  'subscription-widget',
+  'subscription-widget-subscribe',
+  'subscription-widget-wrap-editor',
+  'preamble',
+  'cta-caption',
+  'email-input',
+  'fake-button',
+];
 
 /**
  * Get class list from a hast node as an array.

@@ -1,3 +1,13 @@
+/**
+ * migrate-substack.mjs
+ *
+ * Reads the Substack export at `substack_export/` (posts.csv + posts/*.html),
+ * converts each published newsletter post to Markdown with YAML frontmatter,
+ * downloads and localizes all embedded images to `src/assets/blog/<slug>/`,
+ * and writes the resulting `.md` files to `src/data/blog/`.
+ *
+ * Run via: npm run migrate
+ */
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';

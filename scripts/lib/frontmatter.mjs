@@ -6,7 +6,7 @@ export function slugFromFilename(filename) {
 }
 
 /** Map a posts.csv row to frontmatter fields. Tags are added by hand later. */
-export function buildFrontmatter(row, slug) {
+export function buildFrontmatter(row, _slug) {
   const fm = {
     title: row.title,
     pubDate: new Date(row.post_date).toISOString().slice(0, 10), // YYYY-MM-DD
