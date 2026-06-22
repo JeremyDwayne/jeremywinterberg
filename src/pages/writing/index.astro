@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { sortByDate, getUniqueTags } from '../../utils/posts';
+
+const all = await getCollection('blog', ({ data }) => !data.draft);
+const posts = sortByDate(all);
+const tags = getUniqueTags(all);
+---
+<BaseLayout title="Writing" description="Essays and notes by Jeremy Winterberg.">
+  <h1>Writing</h1>
+
+  <!-- Search box is injected here in Task 9 -->
+  <div id="search-slot"></div>
+
+  <nav class="tag-nav" aria-label="Filter by tag">
+    {tags.map((tag) => <a href={`/tags/${encodeURIComponent(tag)}`}>#{tag}</a>)}
+  </nav>
+
+  {posts.map((post) => (
+    <PostCard id={post.id} title={post.data.title} description={post.data.description}
+              pubDate={post.data.pubDate} tags={post.data.tags} />
+  ))}
+</BaseLayout>
+<style>
+  .tag-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 2rem; }
+  .tag-nav a { font-size: 0.85rem; color: var(--muted); }
+</style>
