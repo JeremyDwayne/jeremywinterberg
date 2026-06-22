@@ -70,12 +70,13 @@ import flyingPhoto from '../assets/about/jeremy-flying.jpeg';
   </ul>
 
   <h2>Skills</h2>
-  <p><strong>Languages:</strong> Ruby, Go, TypeScript, SQL.
-    <strong>Frameworks:</strong> Ruby on Rails, Hotwire, React, Next.js, Angular.
-    <strong>Platforms &amp; tools:</strong> AWS, Docker, Kubernetes, Terraform,
-    GitHub Actions, DataDog, Postgres, SQLite, Redis, Stripe.
-    <strong>Control systems:</strong> SCADA, HMI, controller/PLC logic, telemetry.
-    <strong>Also:</strong> project management and multi-tenant SaaS architecture.</p>
+  <ul class="skills">
+    <li><strong>Languages:</strong> Ruby, Go, TypeScript, SQL.</li>
+    <li><strong>Frameworks:</strong> Ruby on Rails, Hotwire, React, Next.js, Angular.</li>
+    <li><strong>Platforms &amp; tools:</strong> AWS, Docker, Kubernetes, Terraform, GitHub Actions, DataDog, Postgres, SQLite, Redis, Stripe.</li>
+    <li><strong>Control systems:</strong> SCADA, HMI, controller/PLC logic (Allen Bradley / Schneider), telemetry.</li>
+    <li><strong>Also:</strong> project management and multi-tenant SaaS architecture.</li>
+  </ul>
 
   <h2>Education</h2>
   <p>BSc Computer Science, University of Wisconsin–Eau Claire (minor: Economics).</p>
@@ -97,6 +98,8 @@ import flyingPhoto from '../assets/about/jeremy-flying.jpeg';
 <style>
   h3 { margin-bottom: 0.15rem; }
   .role-meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 0.5rem; }
+  .skills { list-style: none; padding: 0; margin: 0; }
+  .skills li { margin: 0.35rem 0; }
   .about-photo { margin: 1.25rem 0; }
   .about-photo :global(img) {
     display: block;
