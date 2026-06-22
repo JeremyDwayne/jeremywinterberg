@@ -1,13 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SOCIAL } from '../consts';
+import flyingPhoto from '../assets/about/jeremy-flying.jpeg';
 ---
 <BaseLayout title="About" description="About Jeremy Winterberg — software engineer.">
   <h1>About</h1>
-  <p>I'm an accomplished software engineer with over eight years of experience
-    building and optimizing robust distributed systems. I'm proficient in Ruby on
-    Rails, AWS, and Postgres, with a track record of leading complex projects, and
-    I spend my side-project time in Go, TypeScript, React, and Next.js.</p>
+  <p>I'm a software engineer with over a decade of experience building and scaling
+    full-stack platforms — robust distributed systems, the APIs on top of them, and
+    the infrastructure underneath. I work most in Ruby on Rails, AWS, and Postgres,
+    and spend my side-project time in Go, TypeScript, React, and Next.js.</p>
 
   <h2>Experience</h2>
   <ul>
@@ -32,6 +34,28 @@ import { SOCIAL } from '../consts';
   <h2>Education</h2>
   <p>BSc Computer Science, University of Wisconsin–Eau Claire (minor: Economics).</p>
 
+  <h2>Off the clock: aviation</h2>
+  <figure class="about-photo">
+    <Image src={flyingPhoto} alt="Jeremy at the controls of a small aircraft, wearing an aviation headset" width={320} densities={[1, 2]} />
+  </figure>
+  <p>When I'm not at a keyboard, you'll usually find me at the airport. I earned my
+    private pilot certificate in 2023, and flying has become one of my favorite ways
+    to think, reset, and see the world from a different altitude. A lot of what makes
+    aviation work — checklists, systems thinking, and managing risk deliberately —
+    quietly makes me a better engineer, too.</p>
+
   <p>For the full work history, see my <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>,
     and my code on <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
 </BaseLayout>
+
+<style>
+  .about-photo { margin: 1.25rem 0; }
+  .about-photo :global(img) {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+</style>
