@@ -10,8 +10,8 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     {NAV.map((item) => (
       <a href={item.href} class={isActive(item.href) ? 'active' : ''}>{item.label}</a>
     ))}
-    <a href={SOCIAL.linkedin} rel="me noopener" target="_blank">LinkedIn</a>
-    <a href={SOCIAL.github} rel="me noopener" target="_blank">GitHub</a>
+    <a href={SOCIAL.linkedin} rel="me noopener noreferrer" target="_blank">LinkedIn</a>
+    <a href={SOCIAL.github} rel="me noopener noreferrer" target="_blank">GitHub</a>
     <ThemeToggle />
   </nav>
 </header>

@@ -26,3 +26,11 @@ test('getPostsByTag filters by tag', () => {
   const posts = [make('a', '2024-01-01', ['Go']), make('b', '2024-01-02', ['DSA'])];
   expect(getPostsByTag(posts, 'Go').map((p) => p.id)).toEqual(['a']);
 });
+
+test('getPostsByTag returns all posts that share a tag', () => {
+  const posts = [make('a', '2024-01-01', ['Go']), make('b', '2024-01-02', ['Go']), make('c', '2024-01-03', ['DSA'])];
+  const result = getPostsByTag(posts, 'Go').map((p) => p.id);
+  expect(result).toContain('a');
+  expect(result).toContain('b');
+  expect(result).toHaveLength(2);
+});

@@ -44,7 +44,6 @@ pre { padding: 1rem; border-radius: 10px; overflow-x: auto; border: 1px solid va
 blockquote { border-left: 3px solid var(--accent); margin: 1.5rem 0; padding: 0.25rem 1rem; color: var(--muted); }
 
 /* Header / footer */
-.site-header, .site-footer { border-color: var(--border); }
 .site-header { border-bottom: 1px solid var(--border); }
 .site-footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
 .nav { display: flex; align-items: center; gap: 1.25rem; padding: 1rem 0; flex-wrap: wrap; }

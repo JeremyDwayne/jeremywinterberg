@@ -11,3 +11,11 @@ test('PostCard renders title link, date, and tags', async () => {
   expect(html).toContain('Mar 24, 2024');
   expect(html).toContain('#Career');
 });
+
+test('PostCard without description does not render description paragraph', async () => {
+  const container = await AstroContainer.create();
+  const html = await container.renderToString(PostCard, {
+    props: { id: 'no-desc', title: 'No Desc', pubDate: new Date('2024-03-24T00:00:00Z'), tags: [] },
+  });
+  expect(html).not.toContain('class="desc"');
+});
