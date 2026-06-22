@@ -1,0 +1,12 @@
+---
+import { SITE, SOCIAL } from '../consts';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer" data-pagefind-ignore>
+  <div class="nav container">
+    <span>© {year} {SITE.title}</span>
+    <a href={SOCIAL.linkedin} rel="me noopener" target="_blank" style="margin-left:auto">LinkedIn</a>
+    <a href={SOCIAL.github} rel="me noopener" target="_blank">GitHub</a>
+    <a href="/rss.xml">RSS</a>
+  </div>
+</footer>

@@ -1,0 +1,17 @@
+---
+import { SITE, NAV, SOCIAL } from '../consts';
+import ThemeToggle from './ThemeToggle.astro';
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+<header class="site-header" data-pagefind-ignore>
+  <nav class="nav container">
+    <a class="brand" href="/">{SITE.title}</a>
+    {NAV.map((item) => (
+      <a href={item.href} class={isActive(item.href) ? 'active' : ''}>{item.label}</a>
+    ))}
+    <a href={SOCIAL.linkedin} rel="me noopener" target="_blank">LinkedIn</a>
+    <a href={SOCIAL.github} rel="me noopener" target="_blank">GitHub</a>
+    <ThemeToggle />
+  </nav>
+</header>
